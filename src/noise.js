@@ -8,14 +8,15 @@
 
 import { MathUtils } from "three";
 import { SimplexNoise } from "three/addons/math/SimplexNoise.js";
+import { prng_alea } from 'esm-seedrandom';
 
+// create a new random function based on the seed
+const aleaGenerator = prng_alea();
 
 var PRNG =
 {
 	random: function ( x ) {
-
-		return MathUtils.seededRandom( x );
-
+		return aleaGenerator();
 	}
 };
 
@@ -34,20 +35,21 @@ function noise( x, y, z, scale=1 ) {
 // reseeding the noise generator
 function noiseSeed( seed ) {
 
-	if ( !Number.isInteger( seed ) )
-		seed = new Date().getTime();
+		// create a new random function based on the seed
+		const aleaGenerator2 = prng_alea(seed);
 
-	PRNG.random( seed );
+		var PRNG2 =
+		{
+			random: function ( x ) {
+				return aleaGenerator2();
+			}
+		};
 
-	simplex = new SimplexNoise( PRNG );
+	simplex = new SimplexNoise( PRNG2 );
 
 	return seed;
 
 }
-
-
-noiseSeed();
-
 
 export
 {

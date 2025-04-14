@@ -15,6 +15,8 @@
 		"imports": {
 		  "three": "https://cdn.jsdelivr.net/npm/three@0.164.0/build/three.module.js",
 		  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.0/examples/jsm/",
+			"esm-seedrandom": "https://cdn.jsdelivr.net/npm/esm-seedrandom/esm/index.min.js",
+
 		  "pet/": "../src/"
 		}
 	  }
@@ -33,9 +35,14 @@
 		
 		var gui = install( PET );
 		
+		gui.add( params, 'seed' )
+			.min( 0 ).max( 100 ).step( 1 )
+			.name( 'Noise <right>seed</right>' )
+			.$input.classList.add( 'top' );
+
 		gui.add( params, 'scale' )
 			.min( 0 ).max( 100 ).step( 1 )
-			.name( 'Noise <right>scale</right>' )
+			.name( '<right>scale</right>' )
 			.$input.classList.add( 'top' );
 		
 		gui.add( params, 'balance' )

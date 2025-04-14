@@ -93,8 +93,8 @@ function animationLoop( /*t*/ ) {
 }
 
 
-
-var seed = noiseSeed();
+// Change this to change the seed
+var seed = noiseSeed(50);
 
 
 var filename,
@@ -144,7 +144,7 @@ function install( PET, auxOnChange ) {
 
 	mainGui.onChange( ()=>{
 
-		seed = noiseSeed();
+		seed = noiseSeed(params.seed);
 		params.height = params.width/2;
 
 		var map = 'map';

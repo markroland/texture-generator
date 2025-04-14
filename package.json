@@ -123,6 +123,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "esm-seedrandom": "^3.0.5-esm.2",
     "semver": "^7.6.2",
     "three": "^0.164.1"
   },
