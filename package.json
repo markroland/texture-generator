@@ -19,9 +19,96 @@
     "LICENSE",
     "package.json",
     "README.md",
+    "dist",
     "src"
   ],
   "main": "src/texture-generator.js",
+  "export": {
+    "./camouflage.js": {
+      "require": "./dist/cjs/patterns/camouflage.js",
+      "import": "./dist/esm/patterns/camouflage.js"
+    },
+    "./cave-art.js": {
+      "require": "./dist/cjs/patterns/cave-art.js",
+      "import": "./dist/esm/patterns/cave-art.js"
+    },
+    "./clouds.js": {
+      "require": "./dist/cjs/patterns/clouds.js",
+      "import": "./dist/esm/patterns/clouds.js"
+    },
+    "./concrete.js": {
+      "require": "./dist/cjs/patterns/concrete.js",
+      "import": "./dist/esm/patterns/concrete.js"
+    },
+    "./entangled.js": {
+      "require": "./dist/cjs/patterns/entangled.js",
+      "import": "./dist/esm/patterns/entangled.js"
+    },
+    "./fordite.js": {
+      "require": "./dist/cjs/patterns/fordite.js",
+      "import": "./dist/esm/patterns/fordite.js"
+    },
+    "./grid.js": {
+      "require": "./dist/cjs/patterns/grid.js",
+      "import": "./dist/esm/patterns/grid.js"
+    },
+    "./isolines.js": {
+      "require": "./dist/cjs/patterns/isolines.js",
+      "import": "./dist/esm/patterns/isolines.js"
+    },
+    "./marble.js": {
+      "require": "./dist/cjs/patterns/marble.js",
+      "import": "./dist/esm/patterns/marble.js"
+    },
+    "./neon-lights.js": {
+      "require": "./dist/cjs/patterns/neon-lights.js",
+      "import": "./dist/esm/patterns/neon-lights.js"
+    },
+    "./photosphere.js": {
+      "require": "./dist/cjs/patterns/photosphere.js",
+      "import": "./dist/esm/patterns/photosphere.js"
+    },
+    "./planet.js": {
+      "require": "./dist/cjs/patterns/planet.js",
+      "import": "./dist/esm/patterns/planet.js"
+    },
+    "./polka-dots.js": {
+      "require": "./dist/cjs/patterns/polka-dots.js",
+      "import": "./dist/esm/patterns/polka-dots.js"
+    },
+    "./satin.js": {
+      "require": "./dist/cjs/patterns/satin.js",
+      "import": "./dist/esm/patterns/satin.js"
+    },
+    "./scepter-head.js": {
+      "require": "./dist/cjs/patterns/scepter-head.js",
+      "import": "./dist/esm/patterns/scepter-head.js"
+    },
+    "./scream.js": {
+      "require": "./dist/cjs/patterns/scream.js",
+      "import": "./dist/esm/patterns/scream.js"
+    },
+    "./simplex-noise.js": {
+      "require": "./dist/cjs/patterns/simplex-noise.js",
+      "import": "./dist/esm/patterns/simplex-noise.js"
+    },
+    "./stars.js": {
+      "require": "./dist/cjs/patterns/stars.js",
+      "import": "./dist/esm/patterns/stars.js"
+    },
+    "./template.js": {
+      "require": "./dist/cjs/patterns/template.js",
+      "import": "./dist/esm/patterns/template.js"
+    },
+    "./water-drops.js": {
+      "require": "./dist/cjs/patterns/water-drops.js",
+      "import": "./dist/esm/patterns/water-drops.js"
+    },
+    "./zebra-lines.js": {
+      "require": "./dist/cjs/patterns/zebra-lines.js",
+      "import": "./dist/esm/patterns/zebra-lines.js"
+    }
+  },
   "directories": {
     "doc": "docs",
     "example": "examples",
@@ -32,6 +119,7 @@
     "url": "git+https://github.com/boytchev/texture-generator.git"
   },
   "scripts": {
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -40,12 +128,16 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.4.0",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
     "@stylistic/eslint-plugin": "^2.1.0",
     "@stylistic/eslint-plugin-js": "^2.1.0",
     "eslint": "^9.4.0",
     "eslint-config-mdcs": "^5.0.0",
     "eslint-plugin-html": "^8.1.1",
     "globals": "^15.3.0",
+    "rollup": "^4.35.0",
     "vite": "^5.2.12"
   }
 }
